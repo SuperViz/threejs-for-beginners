@@ -1,5 +1,9 @@
 function App() {
-  return <>Oie</>;
+	const container = document.getElementById('canvas') as HTMLElement
+	const width = container.clientWidth
+	const height = container.clientHeight
+
+	return <div id='canvas'></div>
 }
 
-export default App;
+export default App
