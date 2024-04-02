@@ -28,16 +28,16 @@ export default function EnableMultiuser({ scene, camera }: { scene: THREE.Scene;
 					imageUrl: '',
 				},
 			},
-			debug: true,
 		})
 
 		if (camera) {
 			console.log('camera', participantName)
+
 			const threeJSPresence = new Presence3D(scene, camera, camera, {
 				isAvatarsEnabled: true,
 				isLaserEnabled: false,
 				isNameEnabled: false,
-				isMouseEnabled: false,
+				isMouseEnabled: true,
 				renderLocalAvatar: false,
 				avatarConfig: {
 					height: 0,
@@ -50,6 +50,7 @@ export default function EnableMultiuser({ scene, camera }: { scene: THREE.Scene;
 			setIsSuperVizEnabled(true)
 		}
 	}
+
 	if (isSuperVizEnabled) return null
 	return <button onClick={() => initSuperViz()}>Enable Multiuser</button>
 }
